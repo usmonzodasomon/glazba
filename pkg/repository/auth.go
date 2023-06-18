@@ -20,6 +20,10 @@ func (r *AuthRepository) CreateUser(user *models.User) (uint, error) {
 	return user.ID, nil
 }
 
-func (r *AuthRepository) GetUser(user *models.User) (uint, error) {
-	return 0, nil
+func (r *AuthRepository) GetUser(login string) (models.User, error) {
+	var user models.User
+	if err := r.db.Where("username = ? OR email = ?", login, login).Take(&user).Error; err != nil {
+		return models.User{}, err
+	}
+	return user, nil
 }

@@ -38,5 +38,23 @@ func (h *handler) register(c *gin.Context) {
 }
 
 func (h *handler) login(c *gin.Context) {
+	logger.GetLogger().Info("Loggining")
 
+	var input models.LoginData
+	if err := c.BindJSON(&input); err != nil {
+		NewErrorResponse(c, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	token, err := h.services.GenerateToken(&input)
+	if err != nil {
+		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"token":   token,
+	})
+	logger.GetLogger().Info("User %v logged in succesfully", input.Login)
 }

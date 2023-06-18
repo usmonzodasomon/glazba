@@ -1,10 +1,15 @@
 package service
 
 import (
+	"time"
+
+	"github.com/dgrijalva/jwt-go"
 	"github.com/usmonzodasomon/glazba/models"
 	"github.com/usmonzodasomon/glazba/pkg/repository"
 	"golang.org/x/crypto/bcrypt"
 )
+
+var signingKey = "owrhe@Q*(h8hrowojwojoe)"
 
 type AuthService struct {
 	repos *repository.Repository
@@ -28,8 +33,25 @@ func (s *AuthService) CreateUser(RegisterData *models.RegisterData) (uint, error
 
 }
 
-func (s *AuthService) GenerateToken(user *models.User) (string, error) {
-	return "", nil
+func (s *AuthService) GenerateToken(loginData *models.LoginData) (string, error) {
+	user, err := s.repos.GetUser(loginData.Login)
+	if err != nil {
+		return "", err
+	}
+
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(loginData.Password)); err != nil {
+		return "", err
+	}
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+		"id":   user.ID,
+		"role": user.Role,
+		"iss":  time.Now().Unix(),
+		"exp":  time.Now().Add(time.Hour * 12).Unix(),
+	})
+
+	return token.SignedString([]byte(signingKey))
+
 }
 
 func (s *AuthService) ParseToken(tokenString string) (uint, error) {

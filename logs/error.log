@@ -1,1 +1,2 @@
 [31mERRO[0m[2023-06-18T13:50:38+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() email is in incorrect format                 
+[31mERRO[0m[2023-06-18T14:34:48+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() crypto/bcrypt: hashedPassword is not the hash of the given password 
