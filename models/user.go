@@ -3,9 +3,9 @@ package models
 import "time"
 
 type User struct {
-	ID        uint64    `json:"id" gorm:"primaryKey"`
-	Firstname string    `json:"firstname" gorm:"not null"`
-	Lastname  string    `json:"lastname" gorm:"not null"`
+	ID        uint      `json:"id" gorm:"primaryKey"`
+	Firstname string    `json:"firstname"`
+	Lastname  string    `json:"lastname"`
 	Username  string    `json:"username" gorm:"not null; unique"`
 	Email     string    `json:"email" gorm:"not nulll; unique"`
 	Password  string    `json:"password" gorm:"not null"`
@@ -13,4 +13,10 @@ type User struct {
 	CreatedAt time.Time `json:"-"`
 	UpdatedAt time.Time `json:"-"`
 	DeletedAt time.Time `json:"-" gorm:"index"`
+}
+
+type RegisterData struct {
+	Email    string `json:"email" binding:"required"`
+	Username string `json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
 }

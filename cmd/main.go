@@ -6,6 +6,7 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/joho/godotenv"
 	"github.com/spf13/viper"
 	"github.com/usmonzodasomon/glazba"
 	"github.com/usmonzodasomon/glazba/db"
@@ -21,6 +22,11 @@ func main() {
 
 	if err := initConfig(); err != nil {
 		log.Error("Error occured while init viper config: ", err)
+		return
+	}
+
+	if err := godotenv.Load(); err != nil {
+		log.Errorf("error loading env variables: %s", err)
 		return
 	}
 

@@ -14,7 +14,10 @@ func NewAuthRepository(db *gorm.DB) *AuthRepository {
 }
 
 func (r *AuthRepository) CreateUser(user *models.User) (uint, error) {
-	return 0, nil
+	if err := r.db.Create(&user).Error; err != nil {
+		return 0, err
+	}
+	return user.ID, nil
 }
 
 func (r *AuthRepository) GetUser(user *models.User) (uint, error) {

@@ -1,15 +1,40 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"net/http"
 
-type User struct {
-	Email    string `json:"email"`
-	Username string `json:"username"`
-	Password string `json:"password"`
-}
+	"github.com/asaskevich/govalidator"
+	"github.com/gin-gonic/gin"
+	"github.com/usmonzodasomon/glazba/logger"
+	"github.com/usmonzodasomon/glazba/models"
+)
 
 func (h *handler) register(c *gin.Context) {
+	logger.GetLogger().Info("Registrating user")
 
+	var input models.RegisterData
+
+	if err := c.BindJSON(&input); err != nil {
+		NewErrorResponse(c, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	if !govalidator.IsEmail(input.Email) {
+		NewErrorResponse(c, http.StatusBadRequest, "email is in incorrect format")
+		return
+	}
+
+	id, err := h.services.CreateUser(&input)
+	if err != nil {
+		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"message": "success",
+		"id":      id,
+	})
+	logger.GetLogger().Infof("User with Id %v created succesfully", id)
 }
 
 func (h *handler) login(c *gin.Context) {
