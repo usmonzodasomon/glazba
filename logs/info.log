@@ -8,3 +8,66 @@
 [36mINFO[0m[2023-06-18T14:34:59+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
 [36mINFO[0m[2023-06-18T14:35:14+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
 [36mINFO[0m[2023-06-18T14:37:42+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-18T22:00:36+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-18T22:01:47+05:00]C:/Projects/glazba/pkg/handler/auth.go:13 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).register() Registrating user                            
+[36mINFO[0m[2023-06-18T22:01:48+05:00]C:/Projects/glazba/pkg/handler/auth.go:37 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).register() User with Id 5 created succesfully           
+[36mINFO[0m[2023-06-18T22:02:02+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-18T22:02:09+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-18T22:02:09+05:00]C:/Projects/glazba/pkg/handler/auth.go:59 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() User ehson logged in succesfully             
+[36mINFO[0m[2023-06-18T22:03:05+05:00]C:/Projects/glazba/pkg/handler/category.go:16 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-18T22:04:03+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-18T22:05:46+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-18T22:05:56+05:00]C:/Projects/glazba/pkg/handler/category.go:16 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-18T22:05:56+05:00]C:/Projects/glazba/pkg/handler/category.go:36 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Category with Id 1 created succesfully       
+[36mINFO[0m[2023-06-18T22:06:04+05:00]C:/Projects/glazba/pkg/handler/category.go:16 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-18T22:06:04+05:00]C:/Projects/glazba/pkg/handler/category.go:36 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Category with Id 2 created succesfully       
+[36mINFO[0m[2023-06-18T22:07:22+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-18T22:45:13+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-18T22:45:49+05:00]C:/Projects/glazba/pkg/handler/category.go:45 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Updating Category                            
+[36mINFO[0m[2023-06-18T22:45:49+05:00]C:/Projects/glazba/pkg/handler/category.go:65 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Category with Id 1 updated succesfully       
+[36mINFO[0m[2023-06-18T22:46:46+05:00]C:/Projects/glazba/pkg/handler/category.go:45 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Updating Category                            
+[36mINFO[0m[2023-06-18T22:46:46+05:00]C:/Projects/glazba/pkg/handler/category.go:65 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Category with Id 1 updated succesfully       
+[36mINFO[0m[2023-06-18T22:46:54+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T14:30:01+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T14:31:13+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-19T14:33:26+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-19T14:33:26+05:00]C:/Projects/glazba/pkg/handler/auth.go:59 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() User somonus logged in succesfully           
+[36mINFO[0m[2023-06-19T14:33:41+05:00]C:/Projects/glazba/pkg/handler/category.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T14:35:09+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T14:55:48+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T14:56:03+05:00]C:/Projects/glazba/pkg/handler/category.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T14:56:03+05:00]C:/Projects/glazba/pkg/handler/category.go:73 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T15:09:55+05:00]C:/Projects/glazba/pkg/handler/category.go:17 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-19T15:09:55+05:00]C:/Projects/glazba/pkg/handler/category.go:37 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Category with Id 3 created succesfully       
+[36mINFO[0m[2023-06-19T15:10:07+05:00]C:/Projects/glazba/pkg/handler/category.go:78 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Updating Category                            
+[36mINFO[0m[2023-06-19T15:10:07+05:00]C:/Projects/glazba/pkg/handler/category.go:98 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Category with Id 3 updated succesfully       
+[36mINFO[0m[2023-06-19T15:10:17+05:00]C:/Projects/glazba/pkg/handler/category.go:102 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).DeleteCategory() Deletating Category                          
+[36mINFO[0m[2023-06-19T15:12:40+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T15:12:50+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T15:13:03+05:00]C:/Projects/glazba/pkg/handler/category.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T15:13:36+05:00]C:/Projects/glazba/pkg/handler/category.go:17 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-19T15:13:36+05:00]C:/Projects/glazba/pkg/handler/category.go:37 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Category with Id 4 created succesfully       
+[36mINFO[0m[2023-06-19T15:14:52+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T15:15:05+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T15:15:16+05:00]C:/Projects/glazba/pkg/handler/category.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T15:15:16+05:00]C:/Projects/glazba/pkg/handler/category.go:73 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T15:15:39+05:00]C:/Projects/glazba/pkg/handler/category.go:102 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).DeleteCategory() Deletating Category                          
+[36mINFO[0m[2023-06-19T15:15:39+05:00]C:/Projects/glazba/pkg/handler/category.go:117 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).DeleteCategory() Category with Id 3 deleted succesfully       
+[36mINFO[0m[2023-06-19T15:15:43+05:00]C:/Projects/glazba/pkg/handler/category.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T15:15:43+05:00]C:/Projects/glazba/pkg/handler/category.go:73 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T16:22:12+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T16:23:40+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T16:24:04+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T16:24:04+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T16:24:13+05:00]C:/Projects/glazba/pkg/handler/category.go:42 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategoryByName() Reading Category with name russian           
+[36mINFO[0m[2023-06-19T16:26:39+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T16:26:48+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T16:26:55+05:00]C:/Projects/glazba/pkg/handler/category.go:42 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategoryByName() Reading Category with name russian           
+[36mINFO[0m[2023-06-19T16:26:55+05:00]C:/Projects/glazba/pkg/handler/category.go:53 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategoryByName() Category with name russian readed succesfully 
+[36mINFO[0m[2023-06-19T16:27:19+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T16:27:19+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T16:27:28+05:00]C:/Projects/glazba/pkg/handler/category.go:74 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Updating Category                            
+[36mINFO[0m[2023-06-19T16:27:28+05:00]C:/Projects/glazba/pkg/handler/category.go:90 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdateCategory() Category with name category3 updated succesfully 
+[36mINFO[0m[2023-06-19T16:27:32+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T16:27:32+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T16:27:38+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             

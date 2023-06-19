@@ -56,5 +56,5 @@ func (h *handler) login(c *gin.Context) {
 		"message": "success",
 		"token":   token,
 	})
-	logger.GetLogger().Info("User %v logged in succesfully", input.Login)
+	logger.GetLogger().Infof("User %v logged in succesfully", input.Login)
 }

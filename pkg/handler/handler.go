@@ -21,11 +21,21 @@ func (h *handler) InitRoutes() *gin.Engine {
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello World!"})
 	})
+	api := router.Group("api")
 
-	auth := router.Group("auth")
+	auth := api.Group("auth")
 	{
 		auth.POST("/register", h.register)
 		auth.POST("/login", h.login)
+	}
+
+	category := api.Group("category", h.UserIdentity)
+	{
+		category.POST("/", h.CreateCategory)
+		category.GET("/", h.ReadCategory)
+		category.GET("/:category", h.ReadCategoryByName)
+		category.PUT("/:category", h.UpdateCategory)
+		category.DELETE("/:category", h.DeleteCategory)
 	}
 	return router
 }

@@ -1,2 +1,12 @@
 [31mERRO[0m[2023-06-18T13:50:38+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() email is in incorrect format                 
 [31mERRO[0m[2023-06-18T14:34:48+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() crypto/bcrypt: hashedPassword is not the hash of the given password 
+[31mERRO[0m[2023-06-18T22:02:02+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() Key: 'LoginData.Login' Error:Field validation for 'Login' failed on the 'required' tag 
+[31mERRO[0m[2023-06-18T22:03:05+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: relation "categories" does not exist (SQLSTATE 42P01) 
+[31mERRO[0m[2023-06-18T22:04:03+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-18T22:44:30+05:00]C:/Projects/glazba/cmd/main.go:43 main.main() Error while migrating tables: ERROR: could not create unique index "idx_categories_name" (SQLSTATE 23505) 
+[31mERRO[0m[2023-06-19T14:30:11+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 4h28m2s                  
+[31mERRO[0m[2023-06-19T14:31:13+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-19T14:33:41+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() strconv.Atoi: parsing "": invalid syntax     
+[31mERRO[0m[2023-06-19T15:10:17+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: column "isactive" of relation "categories" does not exist (SQLSTATE 42703) 
+[31mERRO[0m[2023-06-19T15:13:03+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at end of input (SQLSTATE 42601) 
+[31mERRO[0m[2023-06-19T16:24:13+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at or near "LIMIT" (SQLSTATE 42601) 
