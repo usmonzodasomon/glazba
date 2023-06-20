@@ -9,8 +9,10 @@ type Product struct {
 	Filepath    string `json:"filepath" gorm:"not null"`
 }
 
-type Category struct {
-	ID       uint   `json:"id" gorm:"primaryKey"`
-	Name     string `json:"name" gorm:"not null; unique"`
-	IsActive bool   `json:"-" gorm:"default:true"`
+type RequestProduct struct {
+	Title       string `json:"title"`
+	Artist      string `json:"artist"`
+	ReleaseData string `json:"release_data"`
+	Category    string `json:"category"`
+	Genre       string `json:"genre"`
 }

@@ -19,14 +19,24 @@ type Category interface {
 	DeleteCategory(nameCategory string) error
 }
 
+type Playlist interface {
+	CreatePlaylist(playlist *models.Playlist) (uint, error)
+	ReadPlaylists(playlists *[]models.Playlist, userId uint) error
+	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
+	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
+	DeletePlaylist(playlistId, userId uint) error
+}
+
 type Service struct {
 	Authorization
 	Category
+	Playlist
 }
 
 func NewService(repos *repository.Repository) *Service {
 	return &Service{
 		Authorization: NewAuthUser(repos),
 		Category:      NewCategoryService(repos),
+		Playlist:      NewPlaylistService(repos),
 	}
 }

@@ -30,3 +30,14 @@ func (h *handler) UserIdentity(c *gin.Context) {
 	c.Set("userId", id)
 	c.Set("userRole", role)
 }
+
+func (h *handler) CheckAdminRole(c *gin.Context) {
+	role, ok := c.Get("userRole")
+	if !ok {
+		NewErrorResponse(c, http.StatusInternalServerError, "User role not found")
+	}
+	if role != "admin" {
+		NewErrorResponse(c, http.StatusForbidden, "you are not admin, sorry")
+		return
+	}
+}

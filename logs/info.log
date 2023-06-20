@@ -71,3 +71,64 @@
 [36mINFO[0m[2023-06-19T16:27:32+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
 [36mINFO[0m[2023-06-19T16:27:32+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
 [36mINFO[0m[2023-06-19T16:27:38+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T18:48:00+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T18:49:24+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-19T18:49:24+05:00]C:/Projects/glazba/pkg/handler/auth.go:59 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() User ehson logged in succesfully             
+[36mINFO[0m[2023-06-19T18:49:41+05:00]C:/Projects/glazba/pkg/handler/category.go:16 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateCategory() Creating category                            
+[36mINFO[0m[2023-06-19T18:49:45+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T18:49:46+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T18:57:10+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T18:57:29+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T18:57:40+05:00]C:/Projects/glazba/pkg/handler/category.go:57 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Reading Category                             
+[36mINFO[0m[2023-06-19T18:57:40+05:00]C:/Projects/glazba/pkg/handler/category.go:69 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadCategory() Categories read succesfully                  
+[36mINFO[0m[2023-06-19T18:58:45+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-19T18:59:05+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-19T19:05:23+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T15:07:03+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T15:08:04+05:00]C:/Projects/glazba/pkg/handler/auth.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() Loggining                                    
+[36mINFO[0m[2023-06-20T15:08:04+05:00]C:/Projects/glazba/pkg/handler/auth.go:59 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).login() User ehson logged in succesfully             
+[36mINFO[0m[2023-06-20T15:08:44+05:00]C:/Projects/glazba/pkg/handler/playlist.go:18 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Creating playlist for user with id 5         
+[36mINFO[0m[2023-06-20T15:08:44+05:00]C:/Projects/glazba/pkg/handler/playlist.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Playlist created succesfully with id 1       
+[36mINFO[0m[2023-06-20T15:12:52+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T16:09:07+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T16:10:03+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T16:10:10+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T16:10:14+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T16:10:14+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T16:10:38+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T17:43:32+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T17:43:43+05:00]C:/Projects/glazba/pkg/handler/playlist.go:18 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Creating playlist for user with id 5         
+[36mINFO[0m[2023-06-20T17:43:43+05:00]C:/Projects/glazba/pkg/handler/playlist.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Playlist created succesfully with id 2       
+[36mINFO[0m[2023-06-20T17:43:46+05:00]C:/Projects/glazba/pkg/handler/playlist.go:18 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Creating playlist for user with id 5         
+[36mINFO[0m[2023-06-20T17:43:46+05:00]C:/Projects/glazba/pkg/handler/playlist.go:41 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreatePlaylist() Playlist created succesfully with id 3       
+[36mINFO[0m[2023-06-20T17:43:49+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:43:49+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:45:55+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:45:55+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:47:10+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T17:47:18+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T17:47:22+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:47:22+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:47:32+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 2 from user with id 5 
+[36mINFO[0m[2023-06-20T17:47:32+05:00]C:/Projects/glazba/pkg/handler/playlist.go:88 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Playlist with id 2 read succesfully          
+[36mINFO[0m[2023-06-20T17:47:42+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:47:42+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:49:48+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 2 from user with id 5 
+[36mINFO[0m[2023-06-20T17:49:48+05:00]C:/Projects/glazba/pkg/handler/playlist.go:88 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Playlist with id 2 read succesfully          
+[36mINFO[0m[2023-06-20T17:50:52+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             
+[36mINFO[0m[2023-06-20T17:50:59+05:00]C:/Projects/glazba/cmd/main.go:58 main.main() Server started...                            
+[36mINFO[0m[2023-06-20T17:51:07+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 2 from user with id 5 
+[36mINFO[0m[2023-06-20T17:51:07+05:00]C:/Projects/glazba/pkg/handler/playlist.go:88 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Playlist with id 2 read succesfully          
+[36mINFO[0m[2023-06-20T17:51:16+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:51:16+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:51:34+05:00]C:/Projects/glazba/pkg/handler/playlist.go:104 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdatePlaylist() Updating Playlist with id 3 from user with id 5 
+[36mINFO[0m[2023-06-20T17:51:34+05:00]C:/Projects/glazba/pkg/handler/playlist.go:118 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).UpdatePlaylist() Playlist with id 3 updated succesfully       
+[36mINFO[0m[2023-06-20T17:51:37+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 3 from user with id 5 
+[36mINFO[0m[2023-06-20T17:51:37+05:00]C:/Projects/glazba/pkg/handler/playlist.go:88 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Playlist with id 3 read succesfully          
+[36mINFO[0m[2023-06-20T17:51:46+05:00]C:/Projects/glazba/pkg/handler/playlist.go:134 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).DeletePlaylist() Deleting Playlist with id 2 from user with id 5 
+[36mINFO[0m[2023-06-20T17:51:51+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 2 from user with id 5 
+[36mINFO[0m[2023-06-20T17:52:00+05:00]C:/Projects/glazba/pkg/handler/playlist.go:50 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Reading Playlist from user with id 5         
+[36mINFO[0m[2023-06-20T17:52:00+05:00]C:/Projects/glazba/pkg/handler/playlist.go:61 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylist() Playlists from user 5 read success           
+[36mINFO[0m[2023-06-20T17:52:04+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 0 from user with id 5 
+[36mINFO[0m[2023-06-20T17:52:07+05:00]C:/Projects/glazba/pkg/handler/playlist.go:77 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).ReadPlaylistById() Reading Playlist with id 18446744073709551615 from user with id 5 
+[36mINFO[0m[2023-06-20T20:28:52+05:00]C:/Projects/glazba/cmd/main.go:69 main.main() Server closed...                             

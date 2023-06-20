@@ -10,3 +10,9 @@
 [31mERRO[0m[2023-06-19T15:10:17+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: column "isactive" of relation "categories" does not exist (SQLSTATE 42703) 
 [31mERRO[0m[2023-06-19T15:13:03+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at end of input (SQLSTATE 42601) 
 [31mERRO[0m[2023-06-19T16:24:13+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at or near "LIMIT" (SQLSTATE 42601) 
+[31mERRO[0m[2023-06-19T18:49:41+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() Key: 'CategoryData.Name' Error:Field validation for 'Name' failed on the 'required' tag 
+[31mERRO[0m[2023-06-19T18:59:31+05:00]C:/Projects/glazba/pkg/handler/response.go:13 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() you are not admin, sorry                     
+[31mERRO[0m[2023-06-20T17:51:51+05:00]C:/Projects/glazba/pkg/handler/response.go:16 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-20T17:52:04+05:00]C:/Projects/glazba/pkg/handler/response.go:16 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-20T17:52:07+05:00]C:/Projects/glazba/pkg/handler/response.go:16 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() failed to encode args[0]: unable to encode 0xffffffffffffffff into binary format for int8 (OID 20): 18446744073709551615 is greater than maximum value for int64 
+[31mERRO[0m[2023-06-20T20:28:52+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 

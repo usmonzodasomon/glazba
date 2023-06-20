@@ -29,7 +29,7 @@ func (h *handler) CreateCategory(c *gin.Context) {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{
+	c.JSON(http.StatusCreated, gin.H{
 		"message": "success",
 		"id":      id,
 	})
