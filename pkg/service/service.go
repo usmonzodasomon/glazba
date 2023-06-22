@@ -11,12 +11,12 @@ type Authorization interface {
 	ParseToken(tokenString string) (uint, string, error)
 }
 
-type Category interface {
-	CreateCategory(category *models.Category) (uint, error)
-	ReadCategory(*[]models.Category) error
-	ReadCategoryByName(nameCategory string) (models.Category, error)
-	UpdateCategory(nameCategory, name string) error
-	DeleteCategory(nameCategory string) error
+type Genre interface {
+	CreateGenre(genre *models.Genre) (uint, error)
+	ReadGenre(*[]models.Genre) error
+	ReadGenreById(genreId uint) (models.Genre, error)
+	UpdateGenre(genreId uint, name string) error
+	DeleteGenre(genreId uint) error
 }
 
 type Playlist interface {
@@ -27,16 +27,32 @@ type Playlist interface {
 	DeletePlaylist(playlistId, userId uint) error
 }
 
+type Artist interface {
+	CreateArtist(artist *models.Artist) (uint, error)
+	ReadArtist(*[]models.Artist) error
+	ReadArtistById(artistId uint) (models.Artist, error)
+	UpdateArtist(artistId uint, name string) error
+	DeleteArtist(artistId uint) error
+}
+
+type Music interface {
+	CreateMusic(music *models.Music) (uint, error)
+}
+
 type Service struct {
 	Authorization
-	Category
+	Genre
 	Playlist
+	Music
+	Artist
 }
 
 func NewService(repos *repository.Repository) *Service {
 	return &Service{
 		Authorization: NewAuthUser(repos),
-		Category:      NewCategoryService(repos),
+		Genre:         NewGenreService(repos),
 		Playlist:      NewPlaylistService(repos),
+		Music:         NewMusicService(repos),
+		Artist:        NewArtistService(repos),
 	}
 }

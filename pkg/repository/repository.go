@@ -10,12 +10,12 @@ type Authorization interface {
 	GetUser(login string) (models.User, error)
 }
 
-type Category interface {
-	CreateCategory(category *models.Category) (uint, error)
-	ReadCategory(*[]models.Category) error
-	ReadCategoryByName(categoryName string) (models.Category, error)
-	UpdateCategory(categoryName, name string) error
-	DeleteCategory(categoryName string) error
+type Genre interface {
+	CreateGenre(genre *models.Genre) (uint, error)
+	ReadGenre(*[]models.Genre) error
+	ReadGenreById(genreId uint) (models.Genre, error)
+	UpdateGenre(genreId uint, name string) error
+	DeleteGenre(genreId uint) error
 }
 
 type Playlist interface {
@@ -26,16 +26,32 @@ type Playlist interface {
 	DeletePlaylist(playlistId, userId uint) error
 }
 
+type Artist interface {
+	CreateArtist(artist *models.Artist) (uint, error)
+	ReadArtist(*[]models.Artist) error
+	ReadArtistById(artistId uint) (models.Artist, error)
+	UpdateArtist(artistId uint, name string) error
+	DeleteArtist(artistId uint) error
+}
+
+type Music interface {
+	CreateMusic(music *models.Music) (uint, error)
+}
+
 type Repository struct {
 	Authorization
-	Category
+	Genre
 	Playlist
+	Music
+	Artist
 }
 
 func NewRepository(db *gorm.DB) *Repository {
 	return &Repository{
 		Authorization: NewAuthRepository(db),
-		Category:      NewCategoryRepository(db),
+		Genre:         NewGenreRepository(db),
 		Playlist:      NewPlaylistRepository(db),
+		Music:         NewMusicRepository(db),
+		Artist:        NewArtistRepository(db),
 	}
 }

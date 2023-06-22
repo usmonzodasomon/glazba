@@ -17,6 +17,7 @@ func NewHandler(service *service.Service) *handler {
 
 func (h *handler) InitRoutes() *gin.Engine {
 	router := gin.New()
+	router.MaxMultipartMemory = 10 << 20
 
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello World!"})
@@ -31,13 +32,13 @@ func (h *handler) InitRoutes() *gin.Engine {
 			auth.POST("/login", h.login)
 		}
 
-		category := api.Group("category", h.UserIdentity, h.CheckAdminRole)
+		genre := api.Group("genre", h.UserIdentity, h.CheckAdminRole)
 		{
-			category.POST("/", h.CreateCategory)
-			category.GET("/", h.ReadCategory)
-			category.GET("/:category", h.ReadCategoryByName)
-			category.PUT("/:category", h.UpdateCategory)
-			category.DELETE("/:category", h.DeleteCategory)
+			genre.POST("/", h.CreateGenre)
+			genre.GET("/", h.ReadGenre)
+			genre.GET("/:id", h.ReadGenreById)
+			genre.PUT("/:id", h.UpdateGenre)
+			genre.DELETE("/:id", h.DeleteGenre)
 		}
 
 		playlist := api.Group("playlist", h.UserIdentity)
@@ -48,6 +49,21 @@ func (h *handler) InitRoutes() *gin.Engine {
 			playlist.PUT("/:id", h.UpdatePlaylist)
 			playlist.DELETE("/:id", h.DeletePlaylist)
 		}
+
+		artist := api.Group("artist", h.UserIdentity, h.CheckAdminRole)
+		{
+			artist.POST("/", h.CreateArtist)
+			artist.GET("/", h.ReadArtist)
+			artist.GET("/:id", h.ReadArtistById)
+			artist.PUT("/:id", h.UpdateArtist)
+			artist.DELETE("/:id", h.DeleteArtist)
+		}
+
+		music := api.Group("music", h.UserIdentity, h.CheckAdminRole)
+		{
+			music.POST("/", h.CreateMusic)
+		}
+		api.GET("/", h.GetMusicTest)
 
 	}
 	return router

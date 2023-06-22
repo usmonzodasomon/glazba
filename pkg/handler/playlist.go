@@ -17,19 +17,14 @@ func (h *handler) CreatePlaylist(c *gin.Context) {
 
 	logger.GetLogger().Infof("Creating playlist for user with id %v", userId)
 
-	var input models.PlaylistRequest
+	var input models.Playlist
 
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
 	}
 
-	var playlist models.Playlist
-	playlist.Name = input.Name
-	playlist.Description = input.Description
-	playlist.UserID = userId
-
-	id, err := h.services.CreatePlaylist(&playlist)
+	id, err := h.services.CreatePlaylist(&input)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return

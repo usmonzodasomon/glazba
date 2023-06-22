@@ -9,12 +9,16 @@ import (
 )
 
 type errorResponse struct {
-	Message string `json:"message" binding:"required"`
+	Message string `json:"message"`
+	Error   string `json:"error"`
 }
 
-func NewErrorResponse(c *gin.Context, status int, message string) {
-	logger.GetLogger().Error(message)
-	c.AbortWithStatusJSON(status, errorResponse{Message: message})
+func NewErrorResponse(c *gin.Context, status int, err string) {
+	logger.GetLogger().Error(err)
+	c.AbortWithStatusJSON(status, errorResponse{
+		Message: "Error",
+		Error:   err,
+	})
 }
 
 func GetUserId(c *gin.Context) (uint, error) {

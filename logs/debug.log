@@ -1,0 +1,43 @@
+[37mDEBU[0m[2023-06-21T09:01:38+05:00]C:/Projects/glazba/pkg/handler/product.go:27 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() getting file                                 
+[37mDEBU[0m[2023-06-21T09:29:23+05:00]C:/Projects/glazba/pkg/handler/product.go:19 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() getting file                                 
+[37mDEBU[0m[2023-06-21T09:30:50+05:00]C:/Projects/glazba/pkg/handler/product.go:19 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() getting file                                 
+[37mDEBU[0m[2023-06-21T09:34:06+05:00]C:/Projects/glazba/pkg/handler/product.go:19 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() getting file                                 
+[37mDEBU[0m[2023-06-21T09:34:57+05:00]C:/Projects/glazba/pkg/handler/product.go:19 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() getting file                                 
+[37mDEBU[0m[2023-06-22T13:20:06+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T13:20:06+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\save_suleiman.jpg                      
+[37mDEBU[0m[2023-06-22T13:22:58+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T13:22:58+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\save_suleiman.jpg                      
+[37mDEBU[0m[2023-06-22T13:36:23+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:36:31+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:37:25+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:37:29+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:38:41+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:39:24+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:39:26+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:39:31+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:39:36+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:39:47+05:00]C:/Projects/glazba/pkg/handler/music.go:56 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).GetMusicTest() I'm in getting music header                  
+[37mDEBU[0m[2023-06-22T13:44:01+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T13:44:01+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\dc.jpg                                 
+[37mDEBU[0m[2023-06-22T13:59:39+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T13:59:39+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\sample-3s.mp3                          
+[37mDEBU[0m[2023-06-22T13:59:54+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T13:59:54+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\sample-6s.mp3                          
+[37mDEBU[0m[2023-06-22T14:00:11+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T14:00:11+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\sample-9s.mp3                          
+[37mDEBU[0m[2023-06-22T14:00:19+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() file got                                     
+[37mDEBU[0m[2023-06-22T14:00:19+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateProduct() files\sample-15s.mp3                         
+[37mDEBU[0m[2023-06-22T15:16:53+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T15:16:53+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\1.mp3                                  
+[37mDEBU[0m[2023-06-22T15:17:08+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T15:17:08+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\1.mp3                                  
+[37mDEBU[0m[2023-06-22T15:17:19+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T15:17:19+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\2.mp3                                  
+[37mDEBU[0m[2023-06-22T15:19:54+05:00]C:/Projects/glazba/pkg/handler/music.go:23 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T15:19:54+05:00]C:/Projects/glazba/pkg/handler/music.go:29 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\12.mp3                                 
+[37mDEBU[0m[2023-06-22T17:16:23+05:00]C:/Projects/glazba/pkg/handler/music.go:30 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T17:16:23+05:00]C:/Projects/glazba/pkg/handler/music.go:36 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\2.mp3                                  
+[37mDEBU[0m[2023-06-22T17:18:09+05:00]C:/Projects/glazba/pkg/handler/music.go:30 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T17:18:09+05:00]C:/Projects/glazba/pkg/handler/music.go:36 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\2.mp3                                  
+[37mDEBU[0m[2023-06-22T17:24:23+05:00]C:/Projects/glazba/pkg/handler/music.go:30 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() file got                                     
+[37mDEBU[0m[2023-06-22T17:24:23+05:00]C:/Projects/glazba/pkg/handler/music.go:36 github.com/usmonzodasomon/glazba/pkg/handler.(*handler).CreateMusic() files\12.mp3                                 
