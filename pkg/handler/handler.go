@@ -16,55 +16,61 @@ func NewHandler(service *service.Service) *handler {
 }
 
 func (h *handler) InitRoutes() *gin.Engine {
-	router := gin.New()
-	router.MaxMultipartMemory = 10 << 20
+	router := gin.Default()
+	router.MaxMultipartMemory = 32 << 20
 
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "Hello World!"})
-	})
-
-	api := router.Group("api")
+	api := router.Group("/api")
 	{
+		api.GET("/ping", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"message": "pong"})
+		})
 
-		auth := api.Group("auth")
+		auth := api.Group("/auth")
 		{
 			auth.POST("/register", h.register)
 			auth.POST("/login", h.login)
 		}
 
-		genre := api.Group("genre", h.UserIdentity, h.CheckAdminRole)
+		genre := api.Group("/genre", h.userIdentity, h.checkAdminRole)
 		{
-			genre.POST("/", h.CreateGenre)
-			genre.GET("/", h.ReadGenre)
-			genre.GET("/:id", h.ReadGenreById)
-			genre.PUT("/:id", h.UpdateGenre)
-			genre.DELETE("/:id", h.DeleteGenre)
+			genre.POST("/", h.createGenre)
+			genre.GET("/", h.readGenre)
+			genre.GET("/:id", h.readGenreById)
+			genre.PUT("/:id", h.updateGenre)
+			genre.DELETE("/:id", h.deleteGenre)
 		}
 
-		playlist := api.Group("playlist", h.UserIdentity)
+		playlist := api.Group("/playlist", h.userIdentity)
 		{
-			playlist.POST("/", h.CreatePlaylist)
-			playlist.GET("/", h.ReadPlaylist)
-			playlist.GET("/:id", h.ReadPlaylistById)
-			playlist.PUT("/:id", h.UpdatePlaylist)
-			playlist.DELETE("/:id", h.DeletePlaylist)
+			playlist.POST("/", h.createPlaylist)
+			playlist.GET("/", h.readPlaylist)
+			playlist.GET("/:id", h.readPlaylistById)
+			playlist.PUT("/:id", h.updatePlaylist)
+			playlist.DELETE("/:id", h.deletePlaylist)
 		}
 
-		artist := api.Group("artist", h.UserIdentity, h.CheckAdminRole)
+		artist := api.Group("/artist", h.userIdentity, h.checkAdminRole)
 		{
-			artist.POST("/", h.CreateArtist)
-			artist.GET("/", h.ReadArtist)
-			artist.GET("/:id", h.ReadArtistById)
-			artist.PUT("/:id", h.UpdateArtist)
-			artist.DELETE("/:id", h.DeleteArtist)
+			artist.POST("/", h.createArtist)
+			artist.GET("/", h.readArtist)
+			artist.GET("/:id", h.readArtistById)
+			artist.PUT("/:id", h.updateArtist)
+			artist.DELETE("/:id", h.deleteArtist)
 		}
 
-		music := api.Group("music", h.UserIdentity, h.CheckAdminRole)
+		user := api.Group("/user", h.userIdentity)
 		{
-			music.POST("/", h.CreateMusic)
+			user.GET("/", h.getUser)
+			user.PUT("/", h.updateUser)
+			user.PUT("/change_password", h.changeUserPassword)
 		}
-		api.GET("/", h.GetMusicTest)
 
+		music := api.Group("/music", h.userIdentity, h.checkAdminRole)
+		{
+			music.POST("/", h.createMusic)
+			music.GET("/:id", h.getMusic)
+		}
+		// api.GET("/", h.GetMusicTest)
 	}
 	return router
 }

@@ -20,7 +20,7 @@ type Genre interface {
 }
 
 type Playlist interface {
-	CreatePlaylist(playlist *models.Playlist) (uint, error)
+	CreatePlaylist(playlist *models.Playlist, userId uint) (uint, error)
 	ReadPlaylists(playlists *[]models.Playlist, userId uint) error
 	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
@@ -35,8 +35,15 @@ type Artist interface {
 	DeleteArtist(artistId uint) error
 }
 
+type User interface {
+	ReadUser(user *models.User, userId uint) error
+	UpdateUser(user *models.UserUpdate, userId uint) error
+	ChangeUserPassword(password *models.ChangeUserPasswordData, userID uint) error
+}
+
 type Music interface {
-	CreateMusic(music *models.Music) (uint, error)
+	CreateMusic(music *models.MusicRequest, filePath string) (uint, error)
+	GetMusicById(id uint) (string, error)
 }
 
 type Service struct {
@@ -44,6 +51,7 @@ type Service struct {
 	Genre
 	Playlist
 	Music
+	User
 	Artist
 }
 
@@ -53,6 +61,7 @@ func NewService(repos *repository.Repository) *Service {
 		Genre:         NewGenreService(repos),
 		Playlist:      NewPlaylistService(repos),
 		Music:         NewMusicService(repos),
+		User:          NewUserService(repos),
 		Artist:        NewArtistService(repos),
 	}
 }

@@ -8,6 +8,7 @@ import (
 type Authorization interface {
 	CreateUser(user *models.User) (uint, error)
 	GetUser(login string) (models.User, error)
+	GetUserById(id uint) (models.User, error)
 }
 
 type Genre interface {
@@ -34,8 +35,16 @@ type Artist interface {
 	DeleteArtist(artistId uint) error
 }
 
+type User interface {
+	ReadUser(user *models.User, userId uint) error
+	UpdateUser(user *models.UserUpdate, userId uint) error
+	ChangeUserPassword(password string, userID uint) error
+}
+
 type Music interface {
 	CreateMusic(music *models.Music) (uint, error)
+	GetMusic(musics *[]models.Music) error
+	GetMusicById(id uint) (string, error)
 }
 
 type Repository struct {
@@ -43,6 +52,7 @@ type Repository struct {
 	Genre
 	Playlist
 	Music
+	User
 	Artist
 }
 
@@ -51,6 +61,7 @@ func NewRepository(db *gorm.DB) *Repository {
 		Authorization: NewAuthRepository(db),
 		Genre:         NewGenreRepository(db),
 		Playlist:      NewPlaylistRepository(db),
+		User:          NewUserRepository(db),
 		Music:         NewMusicRepository(db),
 		Artist:        NewArtistRepository(db),
 	}

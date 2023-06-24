@@ -8,11 +8,7 @@ import (
 	"github.com/usmonzodasomon/glazba/models"
 )
 
-// type CategoryData struct {
-// 	Name string `json:"name" binding:"required"`
-// }
-
-func (h *handler) CreateGenre(c *gin.Context) {
+func (h *handler) createGenre(c *gin.Context) {
 	logger.GetLogger().Info("Creating genre")
 	var input models.Genre
 
@@ -33,7 +29,7 @@ func (h *handler) CreateGenre(c *gin.Context) {
 	logger.GetLogger().Infof("Genre with Id %v created succesfully", id)
 }
 
-func (h *handler) ReadGenreById(c *gin.Context) {
+func (h *handler) readGenreById(c *gin.Context) {
 	genreId, err := GetIdFromParam(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
@@ -54,7 +50,7 @@ func (h *handler) ReadGenreById(c *gin.Context) {
 	logger.GetLogger().Infof("Genre with name %v readed succesfully", genreId)
 }
 
-func (h *handler) ReadGenre(c *gin.Context) {
+func (h *handler) readGenre(c *gin.Context) {
 	logger.GetLogger().Info("Reading Genre")
 
 	var genres []models.Genre
@@ -71,7 +67,7 @@ func (h *handler) ReadGenre(c *gin.Context) {
 
 }
 
-func (h *handler) UpdateGenre(c *gin.Context) {
+func (h *handler) updateGenre(c *gin.Context) {
 	logger.GetLogger().Info("Updating Genre")
 	genreId, err := GetIdFromParam(c)
 	if err != nil {
@@ -95,7 +91,7 @@ func (h *handler) UpdateGenre(c *gin.Context) {
 	logger.GetLogger().Infof("Genre with id %v updated succesfully", genreId)
 }
 
-func (h *handler) DeleteGenre(c *gin.Context) {
+func (h *handler) deleteGenre(c *gin.Context) {
 	logger.GetLogger().Info("Deletating Genre")
 
 	genreId, err := GetIdFromParam(c)

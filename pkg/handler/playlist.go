@@ -8,7 +8,7 @@ import (
 	"github.com/usmonzodasomon/glazba/models"
 )
 
-func (h *handler) CreatePlaylist(c *gin.Context) {
+func (h *handler) createPlaylist(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
@@ -24,7 +24,7 @@ func (h *handler) CreatePlaylist(c *gin.Context) {
 		return
 	}
 
-	id, err := h.services.CreatePlaylist(&input)
+	id, err := h.services.CreatePlaylist(&input, userId)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
@@ -36,7 +36,7 @@ func (h *handler) CreatePlaylist(c *gin.Context) {
 	logger.GetLogger().Infof("Playlist created succesfully with id %v", id)
 }
 
-func (h *handler) ReadPlaylist(c *gin.Context) {
+func (h *handler) readPlaylist(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
@@ -56,7 +56,7 @@ func (h *handler) ReadPlaylist(c *gin.Context) {
 	logger.GetLogger().Infof("Playlists from user %v read success", userId)
 }
 
-func (h *handler) ReadPlaylistById(c *gin.Context) {
+func (h *handler) readPlaylistById(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
@@ -83,7 +83,7 @@ func (h *handler) ReadPlaylistById(c *gin.Context) {
 	logger.GetLogger().Infof("Playlist with id %v read succesfully", id)
 }
 
-func (h *handler) UpdatePlaylist(c *gin.Context) {
+func (h *handler) updatePlaylist(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
@@ -113,7 +113,7 @@ func (h *handler) UpdatePlaylist(c *gin.Context) {
 	logger.GetLogger().Infof("Playlist with id %v updated succesfully", id)
 }
 
-func (h *handler) DeletePlaylist(c *gin.Context) {
+func (h *handler) deletePlaylist(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())

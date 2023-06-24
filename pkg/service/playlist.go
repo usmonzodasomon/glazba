@@ -13,7 +13,8 @@ func NewPlaylistService(repos *repository.Repository) *PlaylistService {
 	return &PlaylistService{repos}
 }
 
-func (s *PlaylistService) CreatePlaylist(playlist *models.Playlist) (uint, error) {
+func (s *PlaylistService) CreatePlaylist(playlist *models.Playlist, userId uint) (uint, error) {
+	playlist.UserID = userId
 	return s.repos.CreatePlaylist(playlist)
 }
 

@@ -79,11 +79,3 @@ func (s *AuthService) ParseToken(tokenString string) (uint, string, error) {
 	}
 	return claims.Id, claims.Role, nil
 }
-
-func generatePasswordHash(password string) (string, error) {
-	hashPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
-	if err != nil {
-		return "", err
-	}
-	return string(hashPassword), nil
-}

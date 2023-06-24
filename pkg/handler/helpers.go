@@ -22,7 +22,7 @@ func NewErrorResponse(c *gin.Context, status int, err string) {
 }
 
 func GetUserId(c *gin.Context) (uint, error) {
-	userId, ok := c.Get("userId")
+	userId, ok := c.Get("userID")
 	if !ok {
 		return 0, errors.New("error while getting userId from header")
 	}

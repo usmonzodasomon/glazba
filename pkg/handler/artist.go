@@ -8,7 +8,7 @@ import (
 	"github.com/usmonzodasomon/glazba/models"
 )
 
-func (h *handler) CreateArtist(c *gin.Context) {
+func (h *handler) createArtist(c *gin.Context) {
 	logger.GetLogger().Info("Creating artist")
 	var input models.Artist
 
@@ -29,7 +29,7 @@ func (h *handler) CreateArtist(c *gin.Context) {
 	logger.GetLogger().Infof("Artist with Id %v created succesfully", id)
 }
 
-func (h *handler) ReadArtistById(c *gin.Context) {
+func (h *handler) readArtistById(c *gin.Context) {
 	artistId, err := GetIdFromParam(c)
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
@@ -50,7 +50,7 @@ func (h *handler) ReadArtistById(c *gin.Context) {
 	logger.GetLogger().Infof("Artist with name %v readed succesfully", artistId)
 }
 
-func (h *handler) ReadArtist(c *gin.Context) {
+func (h *handler) readArtist(c *gin.Context) {
 	logger.GetLogger().Info("Reading Artist")
 
 	var artists []models.Artist
@@ -67,7 +67,7 @@ func (h *handler) ReadArtist(c *gin.Context) {
 
 }
 
-func (h *handler) UpdateArtist(c *gin.Context) {
+func (h *handler) updateArtist(c *gin.Context) {
 	logger.GetLogger().Info("Updating Artist")
 	artistId, err := GetIdFromParam(c)
 	if err != nil {
@@ -91,7 +91,7 @@ func (h *handler) UpdateArtist(c *gin.Context) {
 	logger.GetLogger().Infof("Artist with id %v updated succesfully", artistId)
 }
 
-func (h *handler) DeleteArtist(c *gin.Context) {
+func (h *handler) deleteArtist(c *gin.Context) {
 	logger.GetLogger().Info("Deletating Artist")
 
 	artistId, err := GetIdFromParam(c)

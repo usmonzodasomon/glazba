@@ -8,11 +8,12 @@ type User struct {
 	Lastname  string    `json:"lastname"`
 	Username  string    `json:"username" gorm:"not null; unique"`
 	Email     string    `json:"email" gorm:"not nulll; unique"`
-	Password  string    `json:"password" gorm:"not null"`
+	Password  string    `json:"-" gorm:"not null"`
 	Role      string    `json:"-" gorm:"default:user;check:role IN ('user', 'admin')"`
 	CreatedAt time.Time `json:"-"`
 	UpdatedAt time.Time `json:"-"`
 	DeletedAt time.Time `json:"-" gorm:"index"`
+	// Playlists []Playlist `json:"playlists" gorm:"foreignKey:UserID`
 }
 
 type RegisterData struct {
@@ -24,4 +25,15 @@ type RegisterData struct {
 type LoginData struct {
 	Login    string `json:"login" binding:"required"`
 	Password string `json:"password" binding:"required"`
+}
+
+type UserUpdate struct {
+	Firstname *string
+	Lastname  *string
+	Email     *string
+}
+
+type ChangeUserPasswordData struct {
+	OldPassword string `json:"old_password" binding:"required"`
+	NewPassword string `json:"new_password" binding:"required"`
 }

@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func (h *handler) UserIdentity(c *gin.Context) {
+func (h *handler) userIdentity(c *gin.Context) {
 	header := c.GetHeader("Authorization")
 
 	if header == "" {
@@ -27,11 +27,11 @@ func (h *handler) UserIdentity(c *gin.Context) {
 		NewErrorResponse(c, http.StatusUnauthorized, err.Error())
 		return
 	}
-	c.Set("userId", id)
+	c.Set("userID", id)
 	c.Set("userRole", role)
 }
 
-func (h *handler) CheckAdminRole(c *gin.Context) {
+func (h *handler) checkAdminRole(c *gin.Context) {
 	role, ok := c.Get("userRole")
 	if !ok {
 		NewErrorResponse(c, http.StatusInternalServerError, "User role not found")
