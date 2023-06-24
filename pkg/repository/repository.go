@@ -25,6 +25,8 @@ type Playlist interface {
 	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
 	DeletePlaylist(playlistId, userId uint) error
+	IsUnique(userID uint, name string) bool
+	AddPlaylistMusic(playlist models.Playlist, music models.Music) error
 }
 
 type Artist interface {
@@ -44,7 +46,7 @@ type User interface {
 type Music interface {
 	CreateMusic(music *models.Music) (uint, error)
 	GetMusic(musics *[]models.Music) error
-	GetMusicById(id uint) (string, error)
+	GetMusicById(id uint) (models.Music, error)
 }
 
 type Repository struct {

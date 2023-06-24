@@ -25,6 +25,7 @@ type Playlist interface {
 	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
 	DeletePlaylist(playlistId, userId uint) error
+	AddPlaylistMusic(userID, playlistID, musicID uint) error
 }
 
 type Artist interface {
@@ -43,7 +44,7 @@ type User interface {
 
 type Music interface {
 	CreateMusic(music *models.MusicRequest, filePath string) (uint, error)
-	GetMusicById(id uint) (string, error)
+	GetMusicById(id uint) (models.Music, error)
 }
 
 type Service struct {

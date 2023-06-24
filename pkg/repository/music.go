@@ -26,10 +26,10 @@ func (r *MusicRepository) GetMusic(musics *[]models.Music) error {
 	return r.db.Where("is_active = ", true).Find(musics).Error
 }
 
-func (r *MusicRepository) GetMusicById(id uint) (string, error) {
+func (r *MusicRepository) GetMusicById(id uint) (models.Music, error) {
 	var music models.Music
 	if err := r.db.Where("id = ?", id).Take(&music).Error; err != nil {
-		return "", err
+		return models.Music{}, err
 	}
-	return music.Filepath, nil
+	return music, nil
 }

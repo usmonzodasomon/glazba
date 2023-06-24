@@ -1,6 +1,11 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"github.com/usmonzodasomon/glazba/db"
+	"gorm.io/gorm"
+)
 
 type User struct {
 	ID        uint      `json:"id" gorm:"primaryKey"`
@@ -13,7 +18,6 @@ type User struct {
 	CreatedAt time.Time `json:"-"`
 	UpdatedAt time.Time `json:"-"`
 	DeletedAt time.Time `json:"-" gorm:"index"`
-	// Playlists []Playlist `json:"playlists" gorm:"foreignKey:UserID`
 }
 
 type RegisterData struct {
@@ -36,4 +40,13 @@ type UserUpdate struct {
 type ChangeUserPasswordData struct {
 	OldPassword string `json:"old_password" binding:"required"`
 	NewPassword string `json:"new_password" binding:"required"`
+}
+
+func (user *User) BeforeCreate(tx *gorm.DB) error {
+	playlist := Playlist{
+		Name:        "Favorites",
+		Description: "Your favorites music",
+		UserID:      user.ID,
+	}
+	return db.GetDBConn().Create(&playlist).Error
 }

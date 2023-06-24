@@ -31,6 +31,6 @@ func (s *MusicService) CreateMusic(input *models.MusicRequest, filePath string) 
 	return s.repos.CreateMusic(&music)
 }
 
-func (s *MusicService) GetMusicById(id uint) (string, error) {
+func (s *MusicService) GetMusicById(id uint) (models.Music, error) {
 	return s.repos.GetMusicById(id)
 }

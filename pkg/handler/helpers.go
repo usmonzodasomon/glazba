@@ -2,7 +2,10 @@ package handler
 
 import (
 	"errors"
+	"fmt"
+	"mime"
 	"strconv"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/usmonzodasomon/glazba/logger"
@@ -33,8 +36,8 @@ func GetUserId(c *gin.Context) (uint, error) {
 	return id, nil
 }
 
-func GetIdFromParam(c *gin.Context) (uint, error) {
-	idInt, err := strconv.Atoi(c.Param("id"))
+func GetIdFromParam(c *gin.Context, paramName string) (uint, error) {
+	idInt, err := strconv.Atoi(c.Param(paramName))
 	if err != nil {
 		return 0, err
 	}
@@ -42,4 +45,15 @@ func GetIdFromParam(c *gin.Context) (uint, error) {
 	idUint := uint(idInt)
 	return idUint, nil
 
+}
+
+func CheckAudio(ext string) error {
+	fileType := mime.TypeByExtension(ext)
+
+	fileTypeParts := strings.Split(fileType, "/")
+	logger.GetLogger().Debug(ext, fileTypeParts)
+	if len(fileTypeParts) == 0 || string(fileTypeParts[0]) != "audio" {
+		return fmt.Errorf("error audio format")
+	}
+	return nil
 }

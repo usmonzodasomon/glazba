@@ -43,6 +43,7 @@ func (h *handler) InitRoutes() *gin.Engine {
 		playlist := api.Group("/playlist", h.userIdentity)
 		{
 			playlist.POST("/", h.createPlaylist)
+			playlist.POST("/:playlist_id/:music_id", h.addPlaylistMusic)
 			playlist.GET("/", h.readPlaylist)
 			playlist.GET("/:id", h.readPlaylistById)
 			playlist.PUT("/:id", h.updatePlaylist)

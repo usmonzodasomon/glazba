@@ -30,7 +30,7 @@ func (h *handler) createGenre(c *gin.Context) {
 }
 
 func (h *handler) readGenreById(c *gin.Context) {
-	genreId, err := GetIdFromParam(c)
+	genreId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -69,7 +69,7 @@ func (h *handler) readGenre(c *gin.Context) {
 
 func (h *handler) updateGenre(c *gin.Context) {
 	logger.GetLogger().Info("Updating Genre")
-	genreId, err := GetIdFromParam(c)
+	genreId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -94,7 +94,7 @@ func (h *handler) updateGenre(c *gin.Context) {
 func (h *handler) deleteGenre(c *gin.Context) {
 	logger.GetLogger().Info("Deletating Genre")
 
-	genreId, err := GetIdFromParam(c)
+	genreId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return

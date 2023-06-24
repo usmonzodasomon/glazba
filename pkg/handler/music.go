@@ -3,6 +3,7 @@ package handler
 import (
 	"fmt"
 	"net/http"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -19,7 +20,13 @@ func (h *handler) createMusic(c *gin.Context) {
 		return
 	}
 
-	filePath := fmt.Sprintf("./files/genre_%v/%s_%d.mp3", music.GenreID, music.Title, time.Now().Unix())
+	ext := filepath.Ext(music.File.Filename)
+	if err := CheckAudio(ext); err != nil {
+		NewErrorResponse(c, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	filePath := fmt.Sprintf("./files/genre_%v/%s_%d.%s", music.GenreID, music.Title, time.Now().Unix(), ext)
 	filePath = strings.ReplaceAll(filePath, " ", "_")
 	if err := c.SaveUploadedFile(music.File, filePath); err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
@@ -41,19 +48,19 @@ func (h *handler) createMusic(c *gin.Context) {
 func (h *handler) getMusic(c *gin.Context) {
 	logger.GetLogger().Info("Getting musics")
 
-	id, err := GetIdFromParam(c)
+	id, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
 	}
 	logger.GetLogger().Debugf("getting music with id %v", id)
 
-	filePath, err := h.services.GetMusicById(id)
+	music, err := h.services.GetMusicById(id)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
-	logger.GetLogger().Debugf("getting music with filePath %s", filePath)
-	c.File(filePath)
+	logger.GetLogger().Debugf("getting music with filePath %s", music.Filepath)
+	c.File(music.Filepath)
 	logger.GetLogger().Infof("Music with id %v read succesfully", id)
 }

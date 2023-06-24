@@ -30,7 +30,7 @@ func (h *handler) createArtist(c *gin.Context) {
 }
 
 func (h *handler) readArtistById(c *gin.Context) {
-	artistId, err := GetIdFromParam(c)
+	artistId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -69,7 +69,7 @@ func (h *handler) readArtist(c *gin.Context) {
 
 func (h *handler) updateArtist(c *gin.Context) {
 	logger.GetLogger().Info("Updating Artist")
-	artistId, err := GetIdFromParam(c)
+	artistId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
@@ -94,7 +94,7 @@ func (h *handler) updateArtist(c *gin.Context) {
 func (h *handler) deleteArtist(c *gin.Context) {
 	logger.GetLogger().Info("Deletating Artist")
 
-	artistId, err := GetIdFromParam(c)
+	artistId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
