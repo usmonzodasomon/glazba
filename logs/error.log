@@ -27,3 +27,12 @@
 [31mERRO[0m[2023-06-24T19:54:53+05:00]C:/Projects/glazba/pkg/handler/helpers.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() dublicate name for playlist                  
 [31mERRO[0m[2023-06-24T22:03:44+05:00]C:/Projects/glazba/pkg/handler/helpers.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() unsupported relations: Music                 
 [31mERRO[0m[2023-06-24T22:05:50+05:00]C:/Projects/glazba/pkg/handler/helpers.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() unsupported relations: Music                 
+[31mERRO[0m[2023-06-25T01:41:23+05:00]C:/Projects/glazba/pkg/handler/helpers.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: insert or update on table "playlists" violates foreign key constraint "fk_playlists_user" (SQLSTATE 23503) 
+[31mERRO[0m[2023-06-25T08:05:19+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T09:17:17+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: duplicate key value violates unique constraint "users_username_key" (SQLSTATE 23505) 
+[31mERRO[0m[2023-06-25T09:20:12+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-25T09:20:30+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() strconv.Atoi: parsing "": invalid syntax     
+[31mERRO[0m[2023-06-25T09:47:56+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T10:36:47+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T11:09:18+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T11:10:07+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 

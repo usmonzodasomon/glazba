@@ -19,11 +19,12 @@ type tokenClaims struct {
 }
 
 type AuthService struct {
-	repos *repository.Repository
+	auth     repository.Authorization
+	playlist repository.Playlist
 }
 
-func NewAuthUser(repos *repository.Repository) *AuthService {
-	return &AuthService{repos}
+func NewAuthUser(auth repository.Authorization, playlist repository.Playlist) *AuthService {
+	return &AuthService{auth, playlist}
 }
 
 func (s *AuthService) CreateUser(RegisterData *models.RegisterData) (uint, error) {
@@ -36,12 +37,22 @@ func (s *AuthService) CreateUser(RegisterData *models.RegisterData) (uint, error
 	User.Username = RegisterData.Username
 	User.Email = RegisterData.Email
 	User.Password = hashPassword
-	return s.repos.CreateUser(&User)
+	UserID, err := s.auth.CreateUser(&User)
+	if err != nil {
+		return 0, err
+	}
 
+	playlist := models.Playlist{
+		Name:        "Favorites",
+		Description: "Your favorite musics",
+		UserID:      UserID,
+	}
+	_, err = s.playlist.CreatePlaylist(&playlist)
+	return UserID, err
 }
 
 func (s *AuthService) GenerateToken(loginData *models.LoginData) (string, error) {
-	user, err := s.repos.GetUser(loginData.Login)
+	user, err := s.auth.GetUser(loginData.Login)
 	if err != nil {
 		return "", err
 	}

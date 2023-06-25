@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"github.com/usmonzodasomon/glazba/logger"
 	"github.com/usmonzodasomon/glazba/models"
 	"gorm.io/gorm"
 )
@@ -15,7 +14,6 @@ func NewMusicRepository(db *gorm.DB) *MusicRepository {
 }
 
 func (r *MusicRepository) CreateMusic(music *models.Music) (uint, error) {
-	logger.GetLogger().Debug(music.ArtistID)
 	if err := r.db.Create(&music).Error; err != nil {
 		return 0, err
 	}

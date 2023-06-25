@@ -6,10 +6,10 @@ import (
 )
 
 type ArtistService struct {
-	repos *repository.Repository
+	repos repository.Artist
 }
 
-func NewArtistService(repos *repository.Repository) *ArtistService {
+func NewArtistService(repos repository.Artist) *ArtistService {
 	return &ArtistService{repos}
 }
 

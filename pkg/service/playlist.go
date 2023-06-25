@@ -8,10 +8,10 @@ import (
 )
 
 type PlaylistService struct {
-	repos *repository.Repository
+	repos repository.Playlist
 }
 
-func NewPlaylistService(repos *repository.Repository) *PlaylistService {
+func NewPlaylistService(repos repository.Playlist) *PlaylistService {
 	return &PlaylistService{repos}
 }
 
@@ -42,18 +42,4 @@ func (s *PlaylistService) UpdatePlaylist(playlistId, userID uint, playlist *mode
 
 func (s *PlaylistService) DeletePlaylist(playlistId, userId uint) error {
 	return s.repos.DeletePlaylist(playlistId, userId)
-}
-
-func (s *PlaylistService) AddPlaylistMusic(userID, playlistID, musicID uint) error {
-	playlist, err := s.repos.ReadPlaylistById(playlistID, userID)
-	if err != nil {
-		return err
-	}
-
-	music, err := s.repos.GetMusicById(musicID)
-	if err != nil {
-		return err
-	}
-
-	return s.repos.AddPlaylistMusic(playlist, music)
 }

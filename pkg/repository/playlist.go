@@ -44,20 +44,29 @@ func (r *PlaylistRepository) ReadPlaylistById(playlistId, userId uint) (models.P
 }
 
 func (r *PlaylistRepository) UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error {
+	tx := r.db.Begin()
+	defer func() {
+		if r := recover(); r != nil {
+			tx.Rollback()
+		}
+	}()
+
 	if playlist.Name != nil {
-		err := r.db.Model(models.Playlist{}).Where("id = ? AND user_id = ?", playlistId, userId).Update("name", playlist.Name).Error
+		err := tx.Model(models.Playlist{}).Where("id = ? AND user_id = ?", playlistId, userId).Update("name", playlist.Name).Error
 		if err != nil {
+			tx.Rollback()
 			return err
 		}
 	}
 
 	if playlist.Description != nil {
-		err := r.db.Model(models.Playlist{}).Where("id = ? AND user_id = ?", playlistId, userId).Update("description", playlist.Description).Error
+		err := tx.Model(models.Playlist{}).Where("id = ? AND user_id = ?", playlistId, userId).Update("description", playlist.Description).Error
 		if err != nil {
+			tx.Rollback()
 			return err
 		}
 	}
-	return nil
+	return tx.Commit().Error
 }
 
 func (r *PlaylistRepository) DeletePlaylist(playlistId, userId uint) error {
@@ -67,11 +76,10 @@ func (r *PlaylistRepository) DeletePlaylist(playlistId, userId uint) error {
 	return nil
 }
 
-func (r *PlaylistRepository) AddPlaylistMusic(playlist models.Playlist, music models.Music) error {
-	logger.GetLogger().Debug(playlist)
-	logger.GetLogger().Debug(music)
-	if err := r.db.Model(&playlist).Association("Musics").Append(&music); err != nil {
-		return err
+func (r *PlaylistRepository) GetPlaylistByName(name string) (models.Playlist, error) {
+	var playlist models.Playlist
+	if err := r.db.Where("name = ?", name).Take(&playlist).Error; err != nil {
+		return models.Playlist{}, err
 	}
-	return nil
+	return playlist, nil
 }

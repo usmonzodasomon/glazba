@@ -27,11 +27,3 @@ func (r *AuthRepository) GetUser(login string) (models.User, error) {
 	}
 	return user, nil
 }
-
-func (r *AuthRepository) GetUserById(id uint) (models.User, error) {
-	var user models.User
-	if err := r.db.Where("ID = ?", id).Take(&user).Error; err != nil {
-		return models.User{}, err
-	}
-	return user, nil
-}

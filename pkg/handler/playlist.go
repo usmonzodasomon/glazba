@@ -36,34 +36,6 @@ func (h *handler) createPlaylist(c *gin.Context) {
 	logger.GetLogger().Infof("Playlist created succesfully with id %v", id)
 }
 
-func (h *handler) addPlaylistMusic(c *gin.Context) {
-	playlistID, err := GetIdFromParam(c, "playlist_id")
-	if err != nil {
-		NewErrorResponse(c, http.StatusBadRequest, err.Error())
-		return
-	}
-
-	musicID, err := GetIdFromParam(c, "music_id")
-	if err != nil {
-		NewErrorResponse(c, http.StatusBadRequest, err.Error())
-		return
-	}
-
-	userID, err := GetUserId(c)
-	if err != nil {
-		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
-		return
-	}
-
-	if err := h.services.AddPlaylistMusic(userID, playlistID, musicID); err != nil {
-		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
-		return
-	}
-	c.JSON(http.StatusOK, gin.H{
-		"message": "success",
-	})
-}
-
 func (h *handler) readPlaylist(c *gin.Context) {
 	userId, err := GetUserId(c)
 	if err != nil {

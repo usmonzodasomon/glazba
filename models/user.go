@@ -2,9 +2,6 @@ package models
 
 import (
 	"time"
-
-	"github.com/usmonzodasomon/glazba/db"
-	"gorm.io/gorm"
 )
 
 type User struct {
@@ -40,13 +37,4 @@ type UserUpdate struct {
 type ChangeUserPasswordData struct {
 	OldPassword string `json:"old_password" binding:"required"`
 	NewPassword string `json:"new_password" binding:"required"`
-}
-
-func (user *User) BeforeCreate(tx *gorm.DB) error {
-	playlist := Playlist{
-		Name:        "Favorites",
-		Description: "Your favorites music",
-		UserID:      user.ID,
-	}
-	return db.GetDBConn().Create(&playlist).Error
 }

@@ -6,10 +6,10 @@ import (
 )
 
 type GenreService struct {
-	repos *repository.Repository
+	repos repository.Genre
 }
 
-func NewGenreService(repos *repository.Repository) *GenreService {
+func NewGenreService(repos repository.Genre) *GenreService {
 	return &GenreService{repos}
 }
 

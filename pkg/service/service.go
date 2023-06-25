@@ -25,7 +25,6 @@ type Playlist interface {
 	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
 	DeletePlaylist(playlistId, userId uint) error
-	AddPlaylistMusic(userID, playlistID, musicID uint) error
 }
 
 type Artist interface {
@@ -47,6 +46,13 @@ type Music interface {
 	GetMusicById(id uint) (models.Music, error)
 }
 
+type PlaylistMusic interface {
+	AddPlaylistMusic(userID, playlistID, musicID uint) error
+	AddFavoriteMusic(userID, musicID uint) error
+	DeletePlaylistMusic(userID, playlistID, musicID uint) error
+	DeleteFavoriteMusic(userID, musicID uint) error
+}
+
 type Service struct {
 	Authorization
 	Genre
@@ -54,15 +60,17 @@ type Service struct {
 	Music
 	User
 	Artist
+	PlaylistMusic
 }
 
 func NewService(repos *repository.Repository) *Service {
 	return &Service{
-		Authorization: NewAuthUser(repos),
-		Genre:         NewGenreService(repos),
-		Playlist:      NewPlaylistService(repos),
-		Music:         NewMusicService(repos),
-		User:          NewUserService(repos),
-		Artist:        NewArtistService(repos),
+		Authorization: NewAuthUser(repos.Authorization, repos.Playlist),
+		Genre:         NewGenreService(repos.Genre),
+		Playlist:      NewPlaylistService(repos.Playlist),
+		Music:         NewMusicService(repos.Music),
+		User:          NewUserService(repos.User),
+		Artist:        NewArtistService(repos.Artist),
+		PlaylistMusic: NewPlaylistMusicService(repos.Playlist, repos.Music, repos.PlaylistMusic),
 	}
 }

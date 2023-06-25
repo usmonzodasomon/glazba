@@ -8,7 +8,6 @@ import (
 type Authorization interface {
 	CreateUser(user *models.User) (uint, error)
 	GetUser(login string) (models.User, error)
-	GetUserById(id uint) (models.User, error)
 }
 
 type Genre interface {
@@ -26,7 +25,6 @@ type Playlist interface {
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
 	DeletePlaylist(playlistId, userId uint) error
 	IsUnique(userID uint, name string) bool
-	AddPlaylistMusic(playlist models.Playlist, music models.Music) error
 }
 
 type Artist interface {
@@ -38,6 +36,7 @@ type Artist interface {
 }
 
 type User interface {
+	GetUserById(id uint) (models.User, error)
 	ReadUser(user *models.User, userId uint) error
 	UpdateUser(user *models.UserUpdate, userId uint) error
 	ChangeUserPassword(password string, userID uint) error
@@ -49,6 +48,12 @@ type Music interface {
 	GetMusicById(id uint) (models.Music, error)
 }
 
+type PlaylistMusic interface {
+	AddPlaylistMusic(playlist models.Playlist, music models.Music) error
+	GetFavoritePlaylistID(userID uint) (uint, error)
+	DeletePlaylistMusic(playlist models.Playlist, music models.Music) error
+}
+
 type Repository struct {
 	Authorization
 	Genre
@@ -56,6 +61,7 @@ type Repository struct {
 	Music
 	User
 	Artist
+	PlaylistMusic
 }
 
 func NewRepository(db *gorm.DB) *Repository {
@@ -66,5 +72,6 @@ func NewRepository(db *gorm.DB) *Repository {
 		User:          NewUserRepository(db),
 		Music:         NewMusicRepository(db),
 		Artist:        NewArtistRepository(db),
+		PlaylistMusic: NewPlaylistMusicRepository(db),
 	}
 }

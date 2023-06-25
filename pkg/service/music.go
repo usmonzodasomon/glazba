@@ -6,10 +6,10 @@ import (
 )
 
 type MusicService struct {
-	repos *repository.Repository
+	repos repository.Music
 }
 
-func NewMusicService(repos *repository.Repository) *MusicService {
+func NewMusicService(repos repository.Music) *MusicService {
 	return &MusicService{repos}
 }
 

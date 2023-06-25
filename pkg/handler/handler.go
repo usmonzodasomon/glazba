@@ -16,7 +16,7 @@ func NewHandler(service *service.Service) *handler {
 }
 
 func (h *handler) InitRoutes() *gin.Engine {
-	router := gin.Default()
+	router := gin.New()
 	router.MaxMultipartMemory = 32 << 20
 
 	api := router.Group("/api")
@@ -43,7 +43,6 @@ func (h *handler) InitRoutes() *gin.Engine {
 		playlist := api.Group("/playlist", h.userIdentity)
 		{
 			playlist.POST("/", h.createPlaylist)
-			playlist.POST("/:playlist_id/:music_id", h.addPlaylistMusic)
 			playlist.GET("/", h.readPlaylist)
 			playlist.GET("/:id", h.readPlaylistById)
 			playlist.PUT("/:id", h.updatePlaylist)
@@ -70,6 +69,15 @@ func (h *handler) InitRoutes() *gin.Engine {
 		{
 			music.POST("/", h.createMusic)
 			music.GET("/:id", h.getMusic)
+		}
+
+		playlistMusic := playlist.Group("/music")
+		{
+			playlistMusic.POST("/:playlist_id/:music_id", h.addPlaylistMusic)
+			playlistMusic.POST("/favorites/:music_id", h.addFavoriteMusic)
+			playlistMusic.DELETE("/:playlist_id/:music_id", h.deletePlaylistMusic)
+			playlistMusic.DELETE("/favorites/:music_id", h.deleteFavoriteMusic)
+
 		}
 		// api.GET("/", h.GetMusicTest)
 	}
