@@ -27,12 +27,12 @@ func (r *GenreRepository) ReadGenre(genres *[]models.Genre) error {
 	return nil
 }
 
-func (r *GenreRepository) ReadGenreById(genreId uint) (models.Genre, error) {
+func (r *GenreRepository) ReadGenreMusicsById(genreId uint) ([]models.Music, error) {
 	var genre models.Genre
-	if err := r.db.Where("id = ? AND is_active = ?", genreId, true).Take(&genre).Error; err != nil {
-		return models.Genre{}, err
+	if err := r.db.Where("id = ? AND is_active = ?", genreId, true).Preload("Musics").Take(&genre).Error; err != nil {
+		return nil, err
 	}
-	return genre, nil
+	return genre.Musics, nil
 }
 
 func (r *GenreRepository) UpdateGenre(genreId uint, name string) error {
@@ -47,4 +47,12 @@ func (r *GenreRepository) DeleteGenre(genreId uint) error {
 		return err
 	}
 	return nil
+}
+
+func (r *GenreRepository) Test() ([]models.Music, error) {
+	var genre models.Genre
+	if err := r.db.Preload("Musics").First(&genre, 3).Error; err != nil {
+		return nil, err
+	}
+	return genre.Musics, nil
 }

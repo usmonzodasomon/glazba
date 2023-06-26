@@ -20,19 +20,19 @@ func (r *ArtistRepository) CreateArtist(artist *models.Artist) (uint, error) {
 	return artist.ID, nil
 }
 
-func (r *ArtistRepository) ReadArtist(artist *[]models.Artist) error {
-	if err := r.db.Where("is_active = ?", true).Find(artist).Error; err != nil {
+func (r *ArtistRepository) ReadArtist(artist *[]models.Artist, findParam string) error {
+	if err := r.db.Where("is_active = ? AND name ILIKE ?", true, "%"+findParam+"%").Find(artist).Error; err != nil {
 		return err
 	}
 	return nil
 }
 
-func (r *ArtistRepository) ReadArtistById(artistId uint) (models.Artist, error) {
+func (r *ArtistRepository) ReadArtistById(artistId uint) ([]models.Music, error) {
 	var artist models.Artist
-	if err := r.db.Where("id = ? AND is_active = ?", artistId, true).Take(&artist).Error; err != nil {
-		return models.Artist{}, err
+	if err := r.db.Where("id = ? AND is_active = ?", artistId, true).Preload("Musics").Take(&artist).Error; err != nil {
+		return nil, err
 	}
-	return artist, nil
+	return artist.Musics, nil
 }
 
 func (r *ArtistRepository) UpdateArtist(artistId uint, name string) error {

@@ -36,3 +36,40 @@
 [31mERRO[0m[2023-06-25T10:36:47+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
 [31mERRO[0m[2023-06-25T11:09:18+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
 [31mERRO[0m[2023-06-25T11:10:07+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T19:50:42+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T20:03:46+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T20:52:19+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T20:52:49+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() you have already liked this music            
+[31mERRO[0m[2023-06-25T20:57:26+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 18h30m55s                
+[31mERRO[0m[2023-06-25T20:57:45+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() you are not admin, sorry                     
+[31mERRO[0m[2023-06-25T21:10:30+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T21:11:06+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() you are not admin, sorry                     
+[31mERRO[0m[2023-06-25T21:57:55+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at end of input (SQLSTATE 42601) 
+[31mERRO[0m[2023-06-25T22:28:52+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 3m43s                    
+[31mERRO[0m[2023-06-25T22:31:42+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-25T23:55:25+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 41h26m47s                
+[31mERRO[0m[2023-06-25T23:56:16+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 41h27m38s                
+[31mERRO[0m[2023-06-25T23:56:24+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 41h27m46s                
+[31mERRO[0m[2023-06-25T23:56:38+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 41h28m0s                 
+[31mERRO[0m[2023-06-25T23:56:40+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 41h28m2s                 
+[31mERRO[0m[2023-06-26T01:08:41+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-26T01:09:25+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() ERROR: syntax error at or near "title" (SQLSTATE 42601) 
+[31mERRO[0m[2023-06-26T01:28:02+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 3h2m53s                  
+[31mERRO[0m[2023-06-26T01:48:47+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-26T02:20:16+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() failed to encode args[0]: unable to encode 0xfffffffffffffff6 into binary format for int8 (OID 20): 18446744073709551606 is greater than maximum value for int64 
+[31mERRO[0m[2023-06-26T02:20:28+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:20:35+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:20:38+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:22:28+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:23:16+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:24:00+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-26T02:24:13+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:24:57+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() record not found                             
+[31mERRO[0m[2023-06-26T02:26:49+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() music not found                              
+[31mERRO[0m[2023-06-26T03:04:07+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() music not found                              
+[31mERRO[0m[2023-06-26T03:04:48+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() music not found                              
+[31mERRO[0m[2023-06-26T11:25:53+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 13h0m44s                 
+[31mERRO[0m[2023-06-26T11:56:21+05:00]C:/Projects/glazba/pkg/handler/helper.go:20 github.com/usmonzodasomon/glazba/pkg/handler.NewErrorResponse() token is expired by 1h27m20s                 
+[31mERRO[0m[2023-06-26T12:08:34+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-26T12:20:18+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 
+[31mERRO[0m[2023-06-26T12:30:04+05:00]C:/Projects/glazba/cmd/main.go:54 main.main.func1() Error occured while starting server: http: Server closed 

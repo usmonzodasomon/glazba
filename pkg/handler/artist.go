@@ -53,8 +53,10 @@ func (h *handler) readArtistById(c *gin.Context) {
 func (h *handler) readArtist(c *gin.Context) {
 	logger.GetLogger().Info("Reading Artist")
 
+	find := GetQueryParam(c, "find")
+
 	var artists []models.Artist
-	if err := h.services.ReadArtist(&artists); err != nil {
+	if err := h.services.ReadArtist(&artists, find); err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}

@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"github.com/usmonzodasomon/glazba/logger"
 	"github.com/usmonzodasomon/glazba/models"
 	"gorm.io/gorm"
 )
@@ -27,9 +26,8 @@ func (r *PlaylistRepository) CreatePlaylist(playlist *models.Playlist) (uint, er
 	return playlist.ID, nil
 }
 
-func (r *PlaylistRepository) ReadPlaylists(playlists *[]models.Playlist, userId uint) error {
-	logger.GetLogger().Debug(userId)
-	if err := r.db.Where("user_id = ?", userId).Find(&playlists).Error; err != nil {
+func (r *PlaylistRepository) ReadPlaylists(playlists *[]models.Playlist, userId uint, findParam string) error {
+	if err := r.db.Where("user_id = ? AND name ILIKE ?", userId, "%"+findParam+"%").Find(&playlists).Error; err != nil {
 		return err
 	}
 	return nil

@@ -21,8 +21,8 @@ func (s *GenreService) ReadGenre(genres *[]models.Genre) error {
 	return s.repos.ReadGenre(genres)
 }
 
-func (s *GenreService) ReadGenreById(genreId uint) (models.Genre, error) {
-	return s.repos.ReadGenreById(genreId)
+func (s *GenreService) ReadGenreMusicsById(genreId uint) ([]models.Music, error) {
+	return s.repos.ReadGenreMusicsById(genreId)
 }
 
 func (s *GenreService) UpdateGenre(genreId uint, name string) error {
@@ -31,4 +31,8 @@ func (s *GenreService) UpdateGenre(genreId uint, name string) error {
 
 func (s *GenreService) DeleteGenre(genreId uint) error {
 	return s.repos.DeleteGenre(genreId)
+}
+
+func (s *GenreService) Test() ([]models.Music, error) {
+	return s.repos.Test()
 }

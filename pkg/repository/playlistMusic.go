@@ -34,3 +34,10 @@ func (r *PlaylistMusicRepository) DeletePlaylistMusic(playlist models.Playlist, 
 	}
 	return nil
 }
+
+func (r *PlaylistMusicRepository) GetPlaylistMusics(playlist *models.Playlist, playlistID uint) ([]*models.Music, error) {
+	if err := r.db.Preload("Musics").First(&playlist, playlistID).Error; err != nil {
+		return nil, err
+	}
+	return playlist.Musics, nil
+}

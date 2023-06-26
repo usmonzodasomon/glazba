@@ -29,7 +29,7 @@ func (h *handler) createGenre(c *gin.Context) {
 	logger.GetLogger().Infof("Genre with Id %v created succesfully", id)
 }
 
-func (h *handler) readGenreById(c *gin.Context) {
+func (h *handler) readGenreMusicsById(c *gin.Context) {
 	genreId, err := GetIdFromParam(c, "id")
 	if err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
@@ -38,14 +38,14 @@ func (h *handler) readGenreById(c *gin.Context) {
 
 	logger.GetLogger().Infof("Reading Genre with id %v", genreId)
 
-	genre, err := h.services.ReadGenreById(genreId)
+	musics, err := h.services.ReadGenreMusicsById(genreId)
 	if err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"message": "success",
-		"data":    genre,
+		"data":    musics,
 	})
 	logger.GetLogger().Infof("Genre with name %v readed succesfully", genreId)
 }
@@ -109,4 +109,13 @@ func (h *handler) deleteGenre(c *gin.Context) {
 		"message": "success",
 	})
 	logger.GetLogger().Infof("Genre with id %v deleted succesfully", genreId)
+}
+
+func (h *handler) test(c *gin.Context) {
+	musics, err := h.services.Test()
+	if err != nil {
+		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+	c.JSON(http.StatusOK, musics)
 }

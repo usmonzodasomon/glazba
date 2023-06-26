@@ -12,16 +12,17 @@ type Authorization interface {
 }
 
 type Genre interface {
+	Test() ([]models.Music, error)
 	CreateGenre(genre *models.Genre) (uint, error)
 	ReadGenre(*[]models.Genre) error
-	ReadGenreById(genreId uint) (models.Genre, error)
+	ReadGenreMusicsById(genreId uint) ([]models.Music, error)
 	UpdateGenre(genreId uint, name string) error
 	DeleteGenre(genreId uint) error
 }
 
 type Playlist interface {
 	CreatePlaylist(playlist *models.Playlist, userId uint) (uint, error)
-	ReadPlaylists(playlists *[]models.Playlist, userId uint) error
+	ReadPlaylists(playlists *[]models.Playlist, userId uint, findParam string) error
 	ReadPlaylistById(playlistId, userId uint) (models.Playlist, error)
 	UpdatePlaylist(playlistId, userId uint, playlist *models.PlaylistUpdateRequest) error
 	DeletePlaylist(playlistId, userId uint) error
@@ -29,8 +30,8 @@ type Playlist interface {
 
 type Artist interface {
 	CreateArtist(artist *models.Artist) (uint, error)
-	ReadArtist(*[]models.Artist) error
-	ReadArtistById(artistId uint) (models.Artist, error)
+	ReadArtist(artists *[]models.Artist, findParam string) error
+	ReadArtistById(artistId uint) ([]models.Music, error)
 	UpdateArtist(artistId uint, name string) error
 	DeleteArtist(artistId uint) error
 }
@@ -43,14 +44,24 @@ type User interface {
 
 type Music interface {
 	CreateMusic(music *models.MusicRequest, filePath string) (uint, error)
-	GetMusicById(id uint) (models.Music, error)
+	GetFilepathMusic(id uint) (string, error)
+	GetMusicById(id uint) (models.MusicAnswer, error)
+	GetMusic(findParam, artistIDParam, genreIDParam, releaseDataMinParam, releaseDataMaxParam, duration string) ([]models.MusicAnswer, error)
+	UpdateMusic(id uint, music models.MusicUpdate) error
+	DeleteMusic(id uint) error
 }
 
 type PlaylistMusic interface {
+	GetPlaylistMusics(playlistID uint) ([]*models.Music, error)
 	AddPlaylistMusic(userID, playlistID, musicID uint) error
 	AddFavoriteMusic(userID, musicID uint) error
 	DeletePlaylistMusic(userID, playlistID, musicID uint) error
 	DeleteFavoriteMusic(userID, musicID uint) error
+}
+
+type Like interface {
+	AddMusicLike(userID, musicID uint) error
+	DeleteMusicLike(userID, musicID uint) error
 }
 
 type Service struct {
@@ -61,6 +72,7 @@ type Service struct {
 	User
 	Artist
 	PlaylistMusic
+	Like
 }
 
 func NewService(repos *repository.Repository) *Service {
@@ -72,5 +84,6 @@ func NewService(repos *repository.Repository) *Service {
 		User:          NewUserService(repos.User),
 		Artist:        NewArtistService(repos.Artist),
 		PlaylistMusic: NewPlaylistMusicService(repos.Playlist, repos.Music, repos.PlaylistMusic),
+		Like:          NewLikeService(repos.User, repos.Music, repos.Like),
 	}
 }

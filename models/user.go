@@ -12,6 +12,7 @@ type User struct {
 	Email     string    `json:"email" gorm:"not nulll; unique"`
 	Password  string    `json:"-" gorm:"not null"`
 	Role      string    `json:"-" gorm:"default:user;check:role IN ('user', 'admin')"`
+	Likes     []*Music  `json:"-" gorm:"many2many:likes"`
 	CreatedAt time.Time `json:"-"`
 	UpdatedAt time.Time `json:"-"`
 	DeletedAt time.Time `json:"-" gorm:"index"`

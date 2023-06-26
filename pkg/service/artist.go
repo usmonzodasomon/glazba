@@ -17,11 +17,11 @@ func (s *ArtistService) CreateArtist(artist *models.Artist) (uint, error) {
 	return s.repos.CreateArtist(artist)
 }
 
-func (s *ArtistService) ReadArtist(artist *[]models.Artist) error {
-	return s.repos.ReadArtist(artist)
+func (s *ArtistService) ReadArtist(artist *[]models.Artist, findParam string) error {
+	return s.repos.ReadArtist(artist, findParam)
 }
 
-func (s *ArtistService) ReadArtistById(artistId uint) (models.Artist, error) {
+func (s *ArtistService) ReadArtistById(artistId uint) ([]models.Music, error) {
 	return s.repos.ReadArtistById(artistId)
 }
 

@@ -42,10 +42,12 @@ func (h *handler) readPlaylist(c *gin.Context) {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
+
+	find := GetQueryParam(c, "find")
 	logger.GetLogger().Infof("Reading Playlist from user with id %v", userId)
 
 	var playlists []models.Playlist
-	if err := h.services.ReadPlaylists(&playlists, userId); err != nil {
+	if err := h.services.ReadPlaylists(&playlists, userId, find); err != nil {
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}

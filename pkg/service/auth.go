@@ -4,6 +4,7 @@ import (
 	"errors"
 	"time"
 
+	"github.com/asaskevich/govalidator"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/usmonzodasomon/glazba/models"
 	"github.com/usmonzodasomon/glazba/pkg/repository"
@@ -28,6 +29,11 @@ func NewAuthUser(auth repository.Authorization, playlist repository.Playlist) *A
 }
 
 func (s *AuthService) CreateUser(RegisterData *models.RegisterData) (uint, error) {
+
+	if !govalidator.IsEmail(RegisterData.Email) {
+		return 0, errors.New("email is in incorrect format")
+	}
+
 	hashPassword, err := generatePasswordHash(RegisterData.Password)
 	if err != nil {
 		return 0, err

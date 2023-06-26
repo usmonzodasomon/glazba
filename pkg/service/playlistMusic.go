@@ -1,20 +1,21 @@
 package service
 
 import (
+	"github.com/usmonzodasomon/glazba/models"
 	"github.com/usmonzodasomon/glazba/pkg/repository"
 )
 
-type PlaylistMusictService struct {
+type PlaylistMusicService struct {
 	playlist      repository.Playlist
 	music         repository.Music
 	playlistMusic repository.PlaylistMusic
 }
 
-func NewPlaylistMusicService(playlist repository.Playlist, music repository.Music, playlistMisic repository.PlaylistMusic) *PlaylistMusictService {
-	return &PlaylistMusictService{playlist: playlist, music: music, playlistMusic: playlistMisic}
+func NewPlaylistMusicService(playlist repository.Playlist, music repository.Music, playlistMisic repository.PlaylistMusic) *PlaylistMusicService {
+	return &PlaylistMusicService{playlist: playlist, music: music, playlistMusic: playlistMisic}
 }
 
-func (s *PlaylistMusictService) AddPlaylistMusic(userID, playlistID, musicID uint) error {
+func (s *PlaylistMusicService) AddPlaylistMusic(userID, playlistID, musicID uint) error {
 	playlist, err := s.playlist.ReadPlaylistById(playlistID, userID)
 	if err != nil {
 		return err
@@ -28,7 +29,7 @@ func (s *PlaylistMusictService) AddPlaylistMusic(userID, playlistID, musicID uin
 	return s.playlistMusic.AddPlaylistMusic(playlist, music)
 }
 
-func (s *PlaylistMusictService) AddFavoriteMusic(userID, musicID uint) error {
+func (s *PlaylistMusicService) AddFavoriteMusic(userID, musicID uint) error {
 	playlistID, err := s.playlistMusic.GetFavoritePlaylistID(userID)
 	if err != nil {
 		return err
@@ -36,7 +37,7 @@ func (s *PlaylistMusictService) AddFavoriteMusic(userID, musicID uint) error {
 	return s.AddPlaylistMusic(userID, playlistID, musicID)
 }
 
-func (s *PlaylistMusictService) DeletePlaylistMusic(userID, playlistID, musicID uint) error {
+func (s *PlaylistMusicService) DeletePlaylistMusic(userID, playlistID, musicID uint) error {
 	playlist, err := s.playlist.ReadPlaylistById(playlistID, userID)
 	if err != nil {
 		return err
@@ -50,10 +51,15 @@ func (s *PlaylistMusictService) DeletePlaylistMusic(userID, playlistID, musicID 
 	return s.playlistMusic.DeletePlaylistMusic(playlist, music)
 }
 
-func (s *PlaylistMusictService) DeleteFavoriteMusic(userID, musicID uint) error {
+func (s *PlaylistMusicService) DeleteFavoriteMusic(userID, musicID uint) error {
 	playlistID, err := s.playlistMusic.GetFavoritePlaylistID(userID)
 	if err != nil {
 		return err
 	}
 	return s.DeletePlaylistMusic(userID, playlistID, musicID)
+}
+
+func (s *PlaylistMusicService) GetPlaylistMusics(playlistID uint) ([]*models.Music, error) {
+	var playlist models.Playlist
+	return s.playlistMusic.GetPlaylistMusics(&playlist, playlistID)
 }

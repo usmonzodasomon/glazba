@@ -23,8 +23,8 @@ func (s *PlaylistService) CreatePlaylist(playlist *models.Playlist, userId uint)
 	return s.repos.CreatePlaylist(playlist)
 }
 
-func (s *PlaylistService) ReadPlaylists(playlists *[]models.Playlist, userId uint) error {
-	return s.repos.ReadPlaylists(playlists, userId)
+func (s *PlaylistService) ReadPlaylists(playlists *[]models.Playlist, userId uint, findParam string) error {
+	return s.repos.ReadPlaylists(playlists, userId, findParam)
 }
 
 func (s *PlaylistService) ReadPlaylistById(playlistId, userId uint) (models.Playlist, error) {

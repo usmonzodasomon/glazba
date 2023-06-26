@@ -105,3 +105,22 @@ func (h *handler) deleteFavoriteMusic(c *gin.Context) {
 		"message": "success",
 	})
 }
+
+func (h *handler) getPlaylistMusics(c *gin.Context) {
+	playlistID, err := GetIdFromParam(c, "playlist_id")
+	if err != nil {
+		NewErrorResponse(c, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	musics, err := h.services.GetPlaylistMusics(playlistID)
+	if err != nil {
+		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"message": "success",
+		"data":    musics,
+	})
+
+}

@@ -3,7 +3,6 @@ package handler
 import (
 	"net/http"
 
-	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"github.com/usmonzodasomon/glazba/logger"
 	"github.com/usmonzodasomon/glazba/models"
@@ -16,11 +15,6 @@ func (h *handler) register(c *gin.Context) {
 
 	if err := c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
-		return
-	}
-
-	if !govalidator.IsEmail(input.Email) {
-		NewErrorResponse(c, http.StatusBadRequest, "email is in incorrect format")
 		return
 	}
 

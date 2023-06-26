@@ -19,7 +19,7 @@ type errorResponse struct {
 func NewErrorResponse(c *gin.Context, status int, err string) {
 	logger.GetLogger().Error(err)
 	c.AbortWithStatusJSON(status, errorResponse{
-		Message: "Error",
+		Message: "error",
 		Error:   err,
 	})
 }
@@ -56,4 +56,8 @@ func CheckAudio(ext string) error {
 		return fmt.Errorf("error audio format")
 	}
 	return nil
+}
+
+func GetQueryParam(c *gin.Context, queryParam string) string {
+	return c.Query(queryParam)
 }
