@@ -110,12 +110,3 @@ func (h *handler) deleteGenre(c *gin.Context) {
 	})
 	logger.GetLogger().Infof("Genre with id %v deleted succesfully", genreId)
 }
-
-func (h *handler) test(c *gin.Context) {
-	musics, err := h.services.Test()
-	if err != nil {
-		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
-		return
-	}
-	c.JSON(http.StatusOK, musics)
-}

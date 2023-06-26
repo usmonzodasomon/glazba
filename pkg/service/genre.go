@@ -32,7 +32,3 @@ func (s *GenreService) UpdateGenre(genreId uint, name string) error {
 func (s *GenreService) DeleteGenre(genreId uint) error {
 	return s.repos.DeleteGenre(genreId)
 }
-
-func (s *GenreService) Test() ([]models.Music, error) {
-	return s.repos.Test()
-}

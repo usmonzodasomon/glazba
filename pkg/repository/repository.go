@@ -11,7 +11,6 @@ type Authorization interface {
 }
 
 type Genre interface {
-	Test() ([]models.Music, error)
 	CreateGenre(genre *models.Genre) (uint, error)
 	ReadGenre(*[]models.Genre) error
 	ReadGenreMusicsById(genreId uint) ([]models.Music, error)

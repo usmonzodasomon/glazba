@@ -27,8 +27,8 @@ func (h *handler) InitRoutes() *gin.Engine {
 
 		auth := api.Group("/auth")
 		{
-			auth.POST("/register", h.register)
-			auth.POST("/login", h.login)
+			auth.POST("/sign-up", h.register)
+			auth.POST("/sign-in", h.login)
 		}
 
 		genre := api.Group("/genre")
@@ -100,7 +100,6 @@ func (h *handler) InitRoutes() *gin.Engine {
 			like.POST("/like/:music_id", h.addMusicLike)
 			like.DELETE("/like/:music_id", h.deleteMusicLike)
 		}
-		api.GET("/test", h.test)
 	}
 	return router
 }

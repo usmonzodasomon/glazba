@@ -48,11 +48,3 @@ func (r *GenreRepository) DeleteGenre(genreId uint) error {
 	}
 	return nil
 }
-
-func (r *GenreRepository) Test() ([]models.Music, error) {
-	var genre models.Genre
-	if err := r.db.Preload("Musics").First(&genre, 3).Error; err != nil {
-		return nil, err
-	}
-	return genre.Musics, nil
-}
